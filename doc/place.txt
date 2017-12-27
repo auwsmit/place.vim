@@ -14,6 +14,20 @@ place.vim - Place a character without moving
 
     `let g:place_blink = 0`
 
+`g:place_reversed`
+(default '0')
+
+    By default, place.vim takes a motion followed by character(s) to insert.
+    This option reverses things so that the motion goes last.
+
+    For example, to add a semicolon to the end of the line,
+    Default: `ga$;`, mnemonically "place, at end of line, a semicolon"
+    Reversed: `ga;$`, mnemonically "place semicolon at end of line"
+
+    To enable this option, set it to a value other than 0.
+
+    `let g:place_reversed = 1`
+
 ===============================================================================
 2. Mapping                                                       *place-mappings*
 

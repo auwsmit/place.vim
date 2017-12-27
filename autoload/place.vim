@@ -3,8 +3,13 @@
 "shouldRepeat = Whether or not to reuse values for dot repeat
 function! place#insert(shouldPrompt, shouldRepeat)
     if !a:shouldRepeat
-        let s:motion = place#get_motion()
-        let s:insertion = place#get_insertion(a:shouldPrompt)
+        if g:place_reversed
+            let s:insertion = place#get_insertion(a:shouldPrompt)
+            let s:motion = place#get_motion()
+        else
+            let s:motion = place#get_motion()
+            let s:insertion = place#get_insertion(a:shouldPrompt)
+        endif
         let s:mapping = place#get_type_for_motion(s:motion[0])
     endif
 
